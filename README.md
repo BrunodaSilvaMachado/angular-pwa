@@ -2,6 +2,10 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.7.
 
+This project exploits Angular's drag in drop library. By creating 3 numeric lists, the first with all elements, the second and third accepting only odd or even elements respectively.
+
+The project also makes use of the pwa library available in angular.
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
