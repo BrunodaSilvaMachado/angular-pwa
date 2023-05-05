@@ -1,0 +1,57 @@
+<div class="example-container">
+    <h2>Available numbers</h2>
+
+    <div
+        class="example-list"
+        cdkDropList
+        #all="cdkDropList"
+        [cdkDropListData]="allList"
+        [cdkDropListConnectedTo]="[even, odds]"
+        (cdkDropListDropped)="drop($event)"
+        [cdkDropListEnterPredicate]="noReturnPredicate">
+        <div
+        class="example-box"
+        *ngFor="let number of allList"
+        [cdkDragData]="number"
+        cdkDrag>{{number}}</div>
+    </div>
+</div>
+
+<div class="example-container">
+    <h2>Even numbers</h2>
+
+    <div
+        class="example-list"
+        cdkDropList
+        #even="cdkDropList"
+        [cdkDropListData]="evenList"
+        [cdkDropListConnectedTo]="[all]"
+        (cdkDropListDropped)="drop($event)"
+        [cdkDropListEnterPredicate]="evenPredicate">
+        <div
+        class="example-box"
+        *ngFor="let number of evenList"
+        cdkDrag
+        [cdkDragData]="number">{{number}}</div>
+    </div>
+</div>
+
+<div class="example-container">
+    <h2>Odds numbers</h2>
+
+    <div id="predicate"
+        class="example-list"
+        cdkDropList
+        #odds="cdkDropList"
+        [cdkDropListData]="oddsList"
+        [cdkDropListConnectedTo]="[all]"
+        (cdkDropListDropped)="drop($event)"
+        [cdkDropListEnterPredicate]="oddsPredicate">
+        <div
+        class="example-box"
+        *ngFor="let number of oddsList"
+        cdkDrag
+        [cdkDragData]="number">{{number}}</div>
+    </div>
+</div>
+
